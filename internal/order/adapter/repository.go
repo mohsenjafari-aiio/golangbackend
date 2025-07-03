@@ -4,7 +4,6 @@ import (
 	"context"
 
 	"github.com/mohsenjafari-aiio/aiiobackend/internal/order/domain"
-	"github.com/mohsenjafari-aiio/aiiobackend/internal/order/port"
 	"gorm.io/gorm"
 )
 
@@ -12,7 +11,7 @@ type GormOrderRepository struct {
 	db *gorm.DB
 }
 
-func NewGormOrderRepository(db *gorm.DB) port.OrderRepository {
+func NewGormOrderRepository(db *gorm.DB) domain.OrderRepository {
 	return &GormOrderRepository{db: db}
 }
 

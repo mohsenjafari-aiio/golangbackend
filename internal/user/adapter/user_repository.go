@@ -4,7 +4,6 @@ import (
 	"context"
 
 	"github.com/mohsenjafari-aiio/aiiobackend/internal/user/domain"
-	"github.com/mohsenjafari-aiio/aiiobackend/internal/user/port"
 	"gorm.io/gorm"
 )
 
@@ -12,7 +11,7 @@ type GormUserRepository struct {
 	db *gorm.DB
 }
 
-func NewGormUserRepository(db *gorm.DB) port.UserRepository {
+func NewGormUserRepository(db *gorm.DB) domain.UserRepository {
 	return &GormUserRepository{db: db}
 }
 

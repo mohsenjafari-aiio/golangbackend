@@ -4,7 +4,6 @@ import (
 	"context"
 
 	"github.com/mohsenjafari-aiio/aiiobackend/internal/product/domain"
-	"github.com/mohsenjafari-aiio/aiiobackend/internal/product/port"
 	"gorm.io/gorm"
 )
 
@@ -12,7 +11,7 @@ type GormProductRepository struct {
 	db *gorm.DB
 }
 
-func NewGormProductRepository(db *gorm.DB) port.ProductRepository {
+func NewGormProductRepository(db *gorm.DB) domain.ProductRepository {
 	return &GormProductRepository{db: db}
 }
 

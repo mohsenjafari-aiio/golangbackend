@@ -5,9 +5,8 @@ import (
 	"errors"
 
 	orderDomain "github.com/mohsenjafari-aiio/aiiobackend/internal/order/domain"
-	orderPort "github.com/mohsenjafari-aiio/aiiobackend/internal/order/port"
-	productPort "github.com/mohsenjafari-aiio/aiiobackend/internal/product/port"
-	userPort "github.com/mohsenjafari-aiio/aiiobackend/internal/user/port"
+	productDomain "github.com/mohsenjafari-aiio/aiiobackend/internal/product/domain"
+	userDomain "github.com/mohsenjafari-aiio/aiiobackend/internal/user/domain"
 )
 
 type PlaceOrderCommand struct {
@@ -17,9 +16,9 @@ type PlaceOrderCommand struct {
 }
 
 type PlaceOrderHandler struct {
-	OrderRepo   orderPort.OrderRepository
-	UserRepo    userPort.UserRepository
-	ProductRepo productPort.ProductRepository
+	OrderRepo   orderDomain.OrderRepository
+	UserRepo    userDomain.UserRepository
+	ProductRepo productDomain.ProductRepository
 }
 
 func (h *PlaceOrderHandler) Handle(ctx context.Context, cmd PlaceOrderCommand) error {
